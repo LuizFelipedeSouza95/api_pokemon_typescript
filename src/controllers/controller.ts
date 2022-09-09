@@ -3,7 +3,9 @@ import { Model } from "../database/models/model";
 
 class Controller {
   async findAll(req: Request, res: Response) {}
+
   async findOne(req: Request, res: Response) {}
+
   async Create(req: Request, res: Response) {
     const {
       nome_pokemon,
@@ -21,7 +23,9 @@ class Controller {
     });
     return res.status(201).json(pokemon);
   }
+
   async upDate(req: Request, res: Response) {}
+
   async destroy(req: Request, res: Response) {}
 }
 
