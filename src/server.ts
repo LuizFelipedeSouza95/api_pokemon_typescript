@@ -1,8 +1,14 @@
-import express from "express";
+import express, { json } from "express";
+import { db } from "./database/db";
+import { router } from "./routes";
 
-const app = express();
 const PORT = process.env.PORT || "3000";
+const app = express();
 
-app.listen(3000, () => {
+app.use(json());
+app.use(router);
+
+app.listen(3000, async () => {
+  await db.sync();
   console.log("Servidor ativo na porta:", PORT);
 });
