@@ -5,8 +5,9 @@ const router = express.Router();
 
 router.post("/salvarPokemons", controller.Create);
 router.get("/buscarTodosPokemons", controller.findAll);
-router.get("/buscarUmPokemons/:id", controller.findOne);
-router.put("/editarPokemon/:id", controller.upDate);
-router.delete("/deletarPokemon/id", controller.destroy);
+router.get("/buscarUmPokemon", controller.findOne);
+router.put("/editarPokemon", controller.upDate);
+router.delete("/deletarPokemon", controller.destroy);
+router.get("/batalhaPokemon", controller.battlePokemon);
 
 export { router };
