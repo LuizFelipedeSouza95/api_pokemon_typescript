@@ -9,6 +9,6 @@ router.get("/buscarTodosPokemons", controller.findAll);
 router.get("/buscarUmPokemon", controller.findOne);
 router.put("/editarPokemon", controller.upDate);
 router.delete("/deletarPokemon", controller.destroy);
-router.get("/batalhaPokemon", ControllerBattle.findOne);
+router.get("/batalhaPokemon", ControllerBattle.battlePokemon);
 
 export { router };

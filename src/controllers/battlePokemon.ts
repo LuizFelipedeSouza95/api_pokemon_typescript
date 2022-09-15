@@ -2,20 +2,16 @@ import { Request, Response } from "express";
 import { Model } from "../database/models/model";
 
 class ControllerBattle {
-  async findOne(req: Request, res: Response) {
-    const { id_pokemon_01, id_pokemon_02 } = req.body;
 
+  async battlePokemon(req: Request, res: Response) {
+    const  {id_pokemon_01, id_pokemon_02}  = req.params;
     const pokemon1 = await Model.findOne({ where: { id: id_pokemon_01 } });
-    const pokemon2 = await Model.findOne({ where: { id: id_pokemon_02 } });
 
-    //console.log(pokemon1);
+    /* return pokemon1 ? res.status(200).json(pokemon1) : res.status(204).send();//`${pokemon1} ${pokemon2}`; */
+    console.log(pokemon1);
     
-/*     const pokemons = {
-      1: pokemon1,
-      2: pokemon2
-    } */
-    return pokemon2 ? res.status(200).json(pokemon2) : res.status(204).send();
   }
+
 /* async findOne(req: Request, res: Response) {
   const  {id_pokemon_01}  = req.body;//process.env.ID_POKEMON_01
   const  {id_pokemon_02}  = req.body;//process.env.ID_POKEMON_02
