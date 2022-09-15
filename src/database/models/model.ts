@@ -28,4 +28,8 @@ export const Model = db.define("pokemons", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  img: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 });

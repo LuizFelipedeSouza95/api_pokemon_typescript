@@ -21,6 +21,7 @@ class Controller {
       tipo_pokemon,
       fraqueza_pokemon,
       resistencia_pokemon,
+      img
     } = req.body;
     const hp_pokemon = 100;
     const pokemon = await Model.create({
@@ -29,6 +30,7 @@ class Controller {
       fraqueza_pokemon,
       resistencia_pokemon,
       hp_pokemon,
+      img
     });
     return res.status(201).json(pokemon);
   }
@@ -45,62 +47,6 @@ class Controller {
     return res.status(204).send();
   }
 
-
-
-    //// EM DESENVOLVIMENTO
-  async battlePokemon(req: Request, res: Response) {
-    const { id_pokemon } = req.body;
-
-    await Model.findOne({ where: { id: id_pokemon } });
-    
-    //const pokemon_02 = await Model.findOne({ where: { id: id_pokemon_02 } });
-    const superefetivo = 40;
-    const efetivo = 20;
-    const naoefetivo = 10;
-    return res.status(204).send();
-/*     if (pokemon_01[0].hp_pokemon != 0 && pokemon_02[0].hp_pokemon != 0) {
-      if (pokemon_01[0].tipo_pokemon == pokemon_02[0].fraqueza_pokemon) {
-        pokemon_02[0].hp_pokemon =
-          pokemon_02[0].hp_pokemon - superefetivo;
-      } else if (
-        pokemon_01[0].tipo_pokemon == pokemon_02[0].resistencia_pokemon
-      ) {
-        pokemon_02[0].hp_pokemon = pokemon_02[0].hp_pokemon - naoefetivo;
-      } else {
-        pokemon_02[0].hp_pokemon = pokemon_02[0].hp_pokemon - efetivo;
-      }
-    }
-
-    if (pokemon_01[0].hp_pokemon != 0 && pokemon_02[0].hp_pokemon != 0) {
-      if (pokemon_02[0].tipo_pokemon == pokemon_01[0].fraqueza_pokemon) {
-        pokemon_01[0].hp_pokemon =
-          pokemon_01[0].hp_pokemon - superefetivo;
-      } else if (
-        pokemon_02[0].tipo_pokemon == pokemon_01[0].resistencia_pokemon
-      ) {
-        pokemon_01[0].hp_pokemon = pokemon_01[0].hp_pokemon - naoefetivo;
-      } else {
-        pokemon_01[0].hp_pokemon = pokemon_01[0].hp_pokemon - efetivo;
-      }
-    }
-
-    const batlepokemon1 = {
-      "hp_pokemon": pokemon_01[0].hp_pokemon,
-    };
-    const batlepokemon2 = {
-      "hp_pokemon": pokemon_02[0].hp_pokemon,
-    };
-
-    await Model.update(batlepokemon1, { where: { id: id_pokemon_01 } });
-    await Model.update(batlepokemon2, { where: { id: id_pokemon_02 } });
-      
-    if (id_pokemon_01[0].hp_pokemon < 0) id_pokemon_01[0].hp_pokemon = 0;
-    if (id_pokemon_02[0].hp_pokemon < 0) id_pokemon_02[0].hp_pokemon = 0;
-
-    //return `${id_pokemon_01[0].nome_pokemon}: ${id_pokemon_01[0].hp_pokemon} / ${id_pokemon_02[0].nome_pokemon}: ${id_pokemon_02[0].hp_pokemon}`;
-    return `deu certo!` */
-
-  }
 }
 
 export default new Controller();
