@@ -10,5 +10,5 @@ app.use(router);
 
 app.listen(PORT, async () => {
   await db.sync();
-  console.log("Servidor ativo na porta:", PORT);
+  console.log("Active server on port:", PORT);
 });

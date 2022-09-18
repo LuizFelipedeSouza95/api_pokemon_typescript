@@ -11,10 +11,10 @@
   Table name - **pokemons**
 
  - [x] id
- - [x] nome_pokemon
- - [x] tipo_pokemon
- - [x] fraqueza_pokemon
- - [x] resistencia_pokemon
+ - [x] name_pokemon
+ - [x] type_pokemon
+ - [x] weakness_pokemon
+ - [x] resistance_pokemon
  - [x] hp_pokemon
  - [x] img
 
@@ -22,22 +22,20 @@
     yarn dev
 
 ## *PROJECT YARN COMMANDS*
-    COMANDOS YARN DO PROJETO:
-
     yarn dev - Inicia o servidor
     yarn build - Faz o Build do projeto
     yarn start - Inicia o servidor em JS
     yarn on:server - Inicia o servidor MySql
 
-  **AS REQUISIÇÕES TAMBEM PODEM SER FEITAS NO INSOMNIA OU POSTMAN, PORÉM FIZ AS REQUISIÇOES NO VSCODE. SEGUEM ABAIXO OS COMANDOS:**
+  **REQUESTS CAN ALSO BE MADE IN INSOMNIA OR POSTMAN, BUT I MADE THE REQUESTS IN VSCODE. FOLLOW THE COMMANDS BELOW:**
 
-    yarn start:create - Cria o pokemon no banco de dados. 
-    yarn start:destroy - Deleta um pokemon do banco de dados.
-    yarn start:findall - Busca todos os Pokemons no banco de dados.
-    yarn start:findone - Busca um pokemon no banco de dados.
-    yarn start:update - Altera o pokemon no banco de dados.
+    yarn start:create - Create the pokemon in the database. 
+    yarn start:destroy - Delete a pokemon from the database.
+    yarn start:findall - Search all Pokemons in the database.
+    yarn start:findone - Search a pokemon in the database.
+    yarn start:update - Change the pokemon in the database.
 
-<h1 align="center">OBS: É necessário preencher o .env com os dados para executar os comandos.</h1>
+<h1 align="center">NOTE: It is necessary to fill the .env with the data to execute the commands.</h1>
     
 
-  **APENAS O UPDATE PRECISA SER PREENCHIDO DIRETO NO ARQUIVO TS NA PASTA REQUEST_APIS/UPDATE.TS**
+  **ONLY THE UPDATE NEEDS TO BE FILLED DIRECTLY INTO THE TS FILE IN THE REQUEST_APIS/UPDATE.TS FOLDER**

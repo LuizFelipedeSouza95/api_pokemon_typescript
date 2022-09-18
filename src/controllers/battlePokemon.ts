@@ -4,11 +4,22 @@ import { Model } from "../database/models/model";
 class ControllerBattle {
 
   async battlePokemon(req: Request, res: Response) {
-    const  {id_pokemon_01, id_pokemon_02}  = req.params;
+    const  {id_pokemon_01, id_pokemon_02}  = req.body;
+
     const pokemon1 = await Model.findOne({ where: { id: id_pokemon_01 } });
 
-    /* return pokemon1 ? res.status(200).json(pokemon1) : res.status(204).send();//`${pokemon1} ${pokemon2}`; */
-    console.log(pokemon1);
+    const pokemon2 = await Model.findOne({ where: { id: id_pokemon_02 } });
+
+    const result = {
+      pokemon1, 
+      pokemon2
+    }
+    return result ? res.status(200).json(result) : res.status(204).send();
+
+/*     return {
+      pokemon1,
+      pokemon2
+    } */
     
   }
 

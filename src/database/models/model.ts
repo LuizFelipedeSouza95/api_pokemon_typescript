@@ -8,19 +8,19 @@ export const Model = db.define("pokemons", {
     allowNull: false,
     primaryKey: true,
   },
-  nome_pokemon: {
+  name_pokemon: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  tipo_pokemon: {
+  type_pokemon: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  fraqueza_pokemon: {
+  weakness_pokemon: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  resistencia_pokemon: {
+  resistance_pokemon: {
     type: DataTypes.STRING,
     allowNull: false,
   },

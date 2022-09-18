@@ -17,18 +17,18 @@ class Controller {
 
   async Create(req: Request, res: Response) {
     const {
-      nome_pokemon,
-      tipo_pokemon,
-      fraqueza_pokemon,
-      resistencia_pokemon,
+      name_pokemon,
+      type_pokemon,
+      weakness_pokemon,
+      resistance_pokemon,
       img
     } = req.body;
     const hp_pokemon = 100;
     const pokemon = await Model.create({
-      nome_pokemon,
-      tipo_pokemon,
-      fraqueza_pokemon,
-      resistencia_pokemon,
+      name_pokemon,
+      type_pokemon,
+      weakness_pokemon,
+      resistance_pokemon,
       hp_pokemon,
       img
     });
