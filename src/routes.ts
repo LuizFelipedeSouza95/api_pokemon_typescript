@@ -1,14 +1,19 @@
 import express from "express";
-import controller from "./controllers/controller";
-import ControllerBattle from "./controllers/battlePokemon";
+import { Controllers } from "./controllers/controllerCrud";
+import { controllerBattlePokemon } from "./controllers/controllerBattlePokemon";
+import { controllerCurePokemon } from "./controllers/controllerCurePokemon";
 
 const router = express.Router();
+const controller = new Controllers();
+const battle = new controllerBattlePokemon()
+const cure = new controllerCurePokemon()
 
-router.post("/savePokemons", controller.Create);
-router.get("/searchTodosPokemons", controller.findAll);
-router.get("/searchUmPokemon", controller.findOne);
-router.put("/toEditPokemon", controller.upDate);
-router.delete("/deletePokemon", controller.destroy);
-router.get("/battlePokemon", ControllerBattle.battlePokemon);
+router.post("/savePokemons", controller.createPokemon);
+router.get("/searchAllPokemons", controller.searchAllPokemons);
+router.get("/searchOnePokemon", controller.searchOnePokemon);
+router.put("/toEditPokemon", controller.upDatePokemon);
+router.delete("/deletePokemon", controller.destroyPokemon);
+router.get("/battlePokemon", battle.battlePokemon);
+router.post("/curePokemon", cure.curePokemon);
 
 export { router };
