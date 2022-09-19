@@ -9,7 +9,7 @@
     "dev": "tsnd -r dotenv/config './src/server.ts'",
     "build": "tsc",
     "start": "node ./dist/server.js",
-    "on:server": "sudo service mysql start",
+    "on:server": "sudo service mysql start"
   },
   "devDependencies": {
     "@prisma/client": "^4.3.1",
