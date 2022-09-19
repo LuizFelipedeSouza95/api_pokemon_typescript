@@ -10,11 +10,6 @@
     "build": "tsc",
     "start": "node ./dist/server.js",
     "on:server": "sudo service mysql start",
-    "start:create": "tsnd -r dotenv/config './request_APIs/create.ts'",
-    "start:destroy": "tsnd -r dotenv/config './request_APIs/destroy.ts'",
-    "start:findall": "tsnd -r dotenv/config './request_APIs/findall.ts'",
-    "start:findone": "tsnd -r dotenv/config './request_APIs/findone.ts'",
-    "start:update": "tsnd -r dotenv/config './request_APIs/update.ts'"
   },
   "devDependencies": {
     "@prisma/client": "^4.3.1",
