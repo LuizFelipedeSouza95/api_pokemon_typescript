@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "tsnd -r dotenv/config './src/server.ts'",
     "build": "tsc",
-    "start": "node server.js",
+    "start": "node ./dist/server.js",
     "on:service": "sudo service mysql start"
   },
   "devDependencies": {
