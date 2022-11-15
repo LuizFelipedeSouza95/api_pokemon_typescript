@@ -2,7 +2,7 @@ import express, { json } from "express";
 import { router } from "./routes";
 require('dotenv').config()
 
-const PORT = process.env.PORT// || "3003";
+const PORT = process.env.PORT||'3003';
 const app = express();
 
 app.use(json());
