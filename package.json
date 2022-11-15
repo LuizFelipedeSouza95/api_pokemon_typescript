@@ -11,9 +11,8 @@
   "scripts": {
     "dev": "tsnd -r dotenv/config './src/server.ts'",
     "build": "tsc",
-    "start": "node ./dist/server.js",
-    "on:service": "sudo service mysql start",
-    "heroku-postbuild": "yarn prisma migrate dev && yarn build:production"
+    "start": "node server.js",
+    "on:service": "sudo service mysql start"
   },
   "devDependencies": {
     "@prisma/client": "^4.3.1",
