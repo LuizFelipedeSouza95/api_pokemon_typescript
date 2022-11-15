@@ -5,6 +5,9 @@
   "repository": "git@github.com:luizfelipedesouza95/api_pokemon_typescript.git",
   "author": "Luiz Felipe",
   "license": "MIT",
+  "engines": {
+    "node": "18.10.0"
+  },
   "scripts": {
     "dev": "tsnd -r dotenv/config './src/server.ts'",
     "build": "tsc",
