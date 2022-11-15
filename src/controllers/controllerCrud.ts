@@ -81,24 +81,5 @@ export class Controllers {
     });
     return res.status(204).send();
   }
-  
-/*   async battlePokemon(req: Request, res: Response) {
-    const { id_pokemon_01, id_pokemon_02 } = req.body;
-    const pokemon01 = await prismaClient.pokemons.findFirst({
-      where: {
-        id: id_pokemon_01,
-      },
-    });
-    const pokemon02 = await prismaClient.pokemons.findFirst({
-      where: {
-        id: id_pokemon_02,
-      }
-    });
-    const pokemons = {
-      pokemon01,
-      pokemon02
-    }
-    return res.status(200).json(pokemons);
-  } */
 
 }
