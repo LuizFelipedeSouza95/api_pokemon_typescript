@@ -8,12 +8,12 @@ const controller = new Controllers();
 const battle = new controllerBattlePokemon()
 const cure = new controllerCurePokemon()
 
-router.post("/savePokemons", controller.createPokemon);
-router.get("/searchAllPokemons", controller.searchAllPokemons);
-router.get("/searchOnePokemon", controller.searchOnePokemon);
-router.put("/toEditPokemon", controller.upDatePokemon);
-router.delete("/deletePokemon", controller.destroyPokemon);
-router.get("/battlePokemon", battle.battlePokemon);
-router.post("/curePokemon", cure.curePokemon);
+router.post("/api/pokemon/create", controller.createPokemon);
+router.get("/api/pokemon/searchAll", controller.searchAllPokemons);
+router.get("/api/pokemon/searchOne", controller.searchOnePokemon);
+router.put("/api/pokemon/update", controller.upDatePokemon);
+router.delete("/api/pokemon/delete", controller.destroyPokemon);
+router.get("/api/pokemon/battle", battle.battlePokemon);
+router.post("/api/pokemon/cure", cure.curePokemon);
 
 export { router };
