@@ -17,7 +17,7 @@
 
   After configuring the URL, run the command
 
-    yarn prism migrate dev
+    yarn prisma migrate dev
 
   And finally fill the PORT variable in the .env file
 
