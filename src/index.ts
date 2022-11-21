@@ -9,5 +9,5 @@ app.use(json());
 app.use(router);
 
 app.listen(PORT, async () => {
-  console.info(`⚡️Server is running at http://localhost:${PORT}`);
+  console.info(`⚡️Server is running at http://localhost:${PORT} \n access the API documentation http://localhost:3000/api/pokemon/docs`);
 });

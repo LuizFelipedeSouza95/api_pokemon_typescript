@@ -3,4 +3,3 @@ node_modules
 dist
 Comandos.txt
 /build
-prisma/migrations
