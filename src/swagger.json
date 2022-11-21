@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Batalha Pokemon",
+    "description": "CRUD",
+    "contact": {
+      "email": "luizfelipedesouza94@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "API de Homologação"
+    },
+    {
+      "url": "https://pokemon-api-typecript.herokuapp.com",
+      "description": "API de Produção"
+    }
+  ],
+  "paths": {
+    "/api/pokemon/create": {
+      "post": {
+        "summary": "Cadastro de Pokemon",
+        "description": "Essa Rota sera responsavel por salvar um pokemon no banco de Dados",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createPokemon"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pokemon/searchAll": {
+      "get": {
+        "summary": "Mostrar todos os Pokemons",
+        "description": "Essa Rota sera responsavel por mostrar todos os pokemons que existem no banco de Dados"
+      }
+    },
+    "/api/pokemon/searchOne": {
+      "get": {
+        "summary": "Mostrar um Pokemon",
+        "description": "Essa Rota sera responsavel por mostrar um pokemons que existe no banco de Dados",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/searchOnePokemon"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pokemon/update": {
+      "put": {
+        "summary": "Atualizar Pokemon",
+        "description": "Essa Rota sera responsavel por atualizar um pokemon no Banco de dados",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updatePokemon"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pokemon/delete": {
+      "delete": {
+        "summary": "Deletar Pokemon",
+        "description": "Essa Rota sera responsavel por deletar um pokemon no Banco de dados",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deletePokemon"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pokemon/battle": {
+      "get": {
+        "summary": "Batalha Pokemon",
+        "description": "Essa Rota sera responsavel por fazer uma batalha entre 2 pokemons de sua escolha",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/battlePokemon"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pokemon/cure": {
+      "post": {
+        "summary": "Cura Pokemon",
+        "description": "Essa Rota sera responsavel por curar um pokemon após uma batalha",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/curePokemon"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "createPokemon": {
+        "type": "object",
+        "properties": {
+          "name_pokemon": {
+            "type": "string"
+          },
+          "type_pokemon": {
+            "type": "string"
+          },
+          "weakness_pokemon": {
+            "type": "string"
+          },
+          "resistance_pokemon": {
+            "type": "string"
+          },
+          "img": {
+            "type": "string"
+          }
+        }
+      },
+      "searchOnePokemon": {
+        "type": "object",
+        "properties": {
+          "id_pokemon": {
+            "type": "number"
+          }
+        }
+      },
+      "updatePokemon": {
+        "type": "object",
+        "properties": {
+          "id_pokemon": {
+            "type": "number"
+          },
+          "fieldThatWillUpdate": {
+            "type": "string"
+          }
+        }
+      },
+      "deletePokemon": {
+        "type": "object",
+        "properties": {
+          "id_pokemon": {
+            "type": "number"
+          }
+        }
+      },
+      "battlePokemon": {
+        "type": "object",
+        "properties": {
+          "id_pokemon_01": {
+            "type": "number"
+          },
+          "id_pokemon_02": {
+            "type": "number"
+          }
+        }
+      },
+      "curePokemon": {
+        "type": "object",
+        "properties": {
+          "id_pokemon": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
