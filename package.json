@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "tsnd -r dotenv/config './src/index.ts'",
-    "build": "tsc",
+    "build": "rm -rf ./dist && tsc",
     "start": "node ./dist/index.js",
     "on:service": "sudo service mysql start"
   },
