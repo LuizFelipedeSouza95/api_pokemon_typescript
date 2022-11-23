@@ -9,6 +9,7 @@
     "node": "18.10.0"
   },
   "scripts": {
+    "prisma:migrate": "npx prisma migrate dev",
     "dev": "tsnd -r dotenv/config './src/index.ts'",
     "build": "rm -rf ./dist && tsc",
     "start": "node ./dist/index.js",
