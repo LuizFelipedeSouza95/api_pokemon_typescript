@@ -12,7 +12,7 @@
     "prisma:migrate": "npx prisma migrate dev",
     "dev": "tsnd -r dotenv/config './src/index.ts'",
     "build": "rm -rf ./dist && tsc",
-    "start": "node ./dist/index.js",
+    "start": "rm -rf ./dist && tsc && npx prisma migrate dev && node ./dist/index.js",
     "on:service": "sudo service mysql start"
   },
   "devDependencies": {
